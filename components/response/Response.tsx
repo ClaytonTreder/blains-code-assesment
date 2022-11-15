@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { useState } from 'react';
 import { Col, Row } from 'react-bootstrap';
 import Response from '../../shared/interfaces/Response';
 
@@ -8,11 +9,17 @@ interface Props {
 }
 
 export default function ResponseComp(props: Props) {
+  const [state, setState] = useState<{ collapsed: boolean }>({
+    collapsed: props.collapsed,
+  });
+
   return (
     <>
       {props.response.key ? (
-        <Col>
-          {props.collapsed ? (
+        <Col
+          onClick={() => setState((prev) => ({ collapsed: !prev.collapsed }))}
+        >
+          {state.collapsed ? (
             <Row>
               <span style={{ width: '30%' }}>Description: </span>
               {props.response.activity}{' '}

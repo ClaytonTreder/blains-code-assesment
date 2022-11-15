@@ -68,7 +68,11 @@ export default function Home() {
             ) : null}
             {state.responses.length ? (
               state.responses.map((res, i) => (
-                <ResponseComp key={i} response={res} collapsed={i !== 0} />
+                <ResponseComp
+                  key={res.key + i}
+                  response={res}
+                  collapsed={i !== 0}
+                />
               ))
             ) : (
               <b>Nothing yet</b>
