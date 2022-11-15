@@ -20,7 +20,7 @@ export default function ResponseComp(props: Props) {
           onClick={() => setState((prev) => ({ collapsed: !prev.collapsed }))}
         >
           {state.collapsed ? (
-            <Row>
+            <Row style={{ cursor: 'pointer' }}>
               <span style={{ width: '30%' }}>Description: </span>
               {props.response.activity}{' '}
             </Row>

@@ -20,18 +20,18 @@ export default function Home() {
   };
 
   const clearResponses = () => {
-    window.sessionStorage.setItem('responses', JSON.stringify([]));
+    window.localStorage.setItem('responses', JSON.stringify([]));
     setState(() => ({ responses: [] }));
   };
 
   useEffect(() => {
     if (
       typeof window !== undefined &&
-      window.sessionStorage.getItem('responses')
+      window.localStorage.getItem('responses')
     ) {
       setState(() => ({
         responses: JSON.parse(
-          window.sessionStorage.getItem('responses') as string
+          window.localStorage.getItem('responses') as string
         ),
       }));
     }
