@@ -29,7 +29,7 @@ export default function BoredForm(props: Props) {
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
-    fetch('http://www.boredapi.com/api/activity?' + QueryBuilder(state))
+    fetch('https://www.boredapi.com/api/activity?' + QueryBuilder(state))
       .then((res) => res.json())
       .then((data) => props.setResponses(data as Response));
   };
