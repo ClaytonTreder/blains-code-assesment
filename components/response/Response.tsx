@@ -22,29 +22,33 @@ export default function ResponseComp(props: Props) {
           {state.collapsed ? (
             <Row style={{ cursor: 'pointer' }}>
               <span style={{ width: '30%' }}>Description: </span>
-              {props.response.activity}{' '}
+              <span style={{ width: '70%' }}>{props.response.activity}</span>
             </Row>
           ) : (
             <>
               <Row>
                 <span style={{ width: '30%' }}>Description: </span>
-                {props.response.activity}
+                <span style={{ width: '70%' }}>{props.response.activity}</span>
               </Row>
               <Row>
                 <span style={{ width: '30%' }}>Category: </span>
-                {props.response.type}
+                <span style={{ width: '70%' }}>{props.response.type}</span>
               </Row>
               <Row>
                 <span style={{ width: '30%' }}>Accessiblity Rating: </span>
-                {props.response.accessibility}
+                <span style={{ width: '70%' }}>
+                  {props.response.accessibility}
+                </span>
               </Row>
               <Row>
                 <span style={{ width: '30%' }}>Participants: </span>
-                {props.response.participants}
+                <span style={{ width: '70%' }}>
+                  {props.response.participants}
+                </span>
               </Row>
               <Row>
                 <span style={{ width: '30%' }}>Price: </span>
-                {props.response.price}
+                <span style={{ width: '70%' }}>{props.response.price}</span>
               </Row>
               <Row>
                 <span style={{ width: '30%' }}>Link: </span>
@@ -66,8 +70,10 @@ export default function ResponseComp(props: Props) {
         </Col>
       ) : (
         <Row>
-          <span style={{ width: '30%' }}></span>
-          No activity found with those parameters
+          <span style={{ width: '30%' }}>Error: </span>
+          <span style={{ width: '70%' }}>
+            No activity found with those parameters
+          </span>
         </Row>
       )}
       <hr />

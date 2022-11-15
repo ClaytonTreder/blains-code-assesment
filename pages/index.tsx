@@ -52,19 +52,21 @@ export default function Home() {
           Don't be! Fill out the form below to find something to do.
         </p>
         <Row>
-          <Col xs={3}>
+          <Col className='pb-4' md={3}>
             <BoredForm setResponses={setResponses} />
           </Col>
-          <Col xs={{ offset: 1, span: 8 }}>
+          <Col md={{ offset: 1, span: 8 }}>
             {state.responses.length ? (
-              <Button
-                type='button'
-                variant='danger'
-                className='mb-3'
-                onClick={clearResponses}
-              >
-                Clear Activities
-              </Button>
+              <Row className=' text-center'>
+                <Button
+                  type='button'
+                  variant='danger'
+                  className='mb-3 col-md-4 offset-md-4'
+                  onClick={clearResponses}
+                >
+                  Clear Activities
+                </Button>
+              </Row>
             ) : null}
             {state.responses.length ? (
               state.responses.map((res, i) => (
@@ -75,7 +77,9 @@ export default function Home() {
                 />
               ))
             ) : (
-              <b>Nothing yet</b>
+              <Row className='p-5 text-center'>
+                <b>Nothing yet</b>
+              </Row>
             )}
           </Col>
         </Row>
