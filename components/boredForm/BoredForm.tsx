@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Form, Button, Row, Col } from 'react-bootstrap';
-import QueryBuilder from '../../shared/functions/queryBuilder';
+import QueryBuilder from '../../shared/functions/Query';
 import Request from '../../shared/interfaces/Request';
 import Response from '../../shared/interfaces/Response';
 
