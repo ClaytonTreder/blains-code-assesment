@@ -12,7 +12,7 @@ export default function Home() {
   });
 
   const setResponses = (res: Response) => {
-    window.sessionStorage.setItem(
+    window.localStorage.setItem(
       'responses',
       JSON.stringify([...state.responses, res])
     );
