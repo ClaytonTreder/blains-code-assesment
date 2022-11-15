@@ -22,7 +22,7 @@ export default function BoredForm(props: Props) {
 
   const handleRandom = (e: any) => {
     e.preventDefault();
-    fetch('http://www.boredapi.com/api/activity')
+    fetch('https://www.boredapi.com/api/activity')
       .then((res) => res.json())
       .then((data) => props.setResponses(data as Response));
   };
