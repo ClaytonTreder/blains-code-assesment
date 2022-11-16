@@ -69,7 +69,7 @@ export default function BoredForm(props: Props) {
             <Col xs={2}>
               <i>Free</i>
             </Col>
-            <Col xs={8}>
+            <Col xs={6}>
               <Form.Range
                 onChange={handleChange}
                 value={state.price}
@@ -95,7 +95,7 @@ export default function BoredForm(props: Props) {
             <Col xs={2}>
               <i>Most</i>
             </Col>
-            <Col xs={8}>
+            <Col xs={6}>
               <Form.Range
                 onChange={handleChange}
                 value={state.accessibility}
