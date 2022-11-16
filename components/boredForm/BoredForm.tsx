@@ -10,7 +10,7 @@ interface Props {
 
 export default function BoredForm(props: Props) {
   const [state, setState] = useState<Request>({
-    category: undefined,
+    category: '0',
     participants: 1,
     price: 0,
     accessibility: 0,
@@ -28,6 +28,7 @@ export default function BoredForm(props: Props) {
   };
 
   const handleSubmit = (e: any) => {
+    console.log(state);
     e.preventDefault();
     fetch('https://www.boredapi.com/api/activity?' + QueryBuilder(state))
       .then((res) => res.json())
@@ -39,6 +40,7 @@ export default function BoredForm(props: Props) {
       <Form onSubmit={handleSubmit}>
         <Form.Label>Category</Form.Label>
         <Form.Select onChange={handleChange} name='category'>
+          <option value={0}>--Select--</option>
           <option value='education'>Education</option>
           <option value='recreation'>Recreation</option>
           <option value='social'>Social</option>

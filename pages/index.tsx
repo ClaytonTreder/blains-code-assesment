@@ -52,10 +52,10 @@ export default function Home() {
           Don't be! Fill out the form below to find something to do.
         </p>
         <Row>
-          <Col className='pb-4' md={3}>
+          <Col className='pb-4' md={5}>
             <BoredForm setResponses={setResponses} />
           </Col>
-          <Col md={{ offset: 1, span: 8 }}>
+          <Col md={{ offset: 1, span: 6 }}>
             {state.responses.length ? (
               <Row className=' text-center'>
                 <Button
@@ -71,7 +71,7 @@ export default function Home() {
             {state.responses.length ? (
               state.responses.map((res, i) => (
                 <ResponseComp
-                  key={res.key + i}
+                  key={`${res.key}${i}`}
                   response={res}
                   collapsed={i !== 0}
                 />

@@ -9,7 +9,7 @@ export default interface Request {
     | 'relaxation'
     | 'music'
     | 'busywork'
-    | undefined;
+    | '0';
   participants: number;
   price: number;
   accessibility: number;
