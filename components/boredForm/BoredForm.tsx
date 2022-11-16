@@ -121,7 +121,7 @@ export default function BoredForm(props: Props) {
             </Col>
           </Row>
         </Form.Group>
-        <Row className={'justify-content-center'}>
+        <Row className='justify-content-center'>
           <Button variant='primary' type='submit' className='mb-3'>
             Submit
           </Button>

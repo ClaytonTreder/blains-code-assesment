@@ -26,7 +26,7 @@ export default function ResponseComp(props: Props) {
               <span className={styles.value}>{props.response.activity}</span>
             </Row>
           ) : (
-            <>
+            <div style={{ cursor: 'pointer' }}>
               <Row>
                 <span className={styles.label}>Description: </span>
                 <span className={styles.value}>{props.response.activity}</span>
@@ -68,7 +68,7 @@ export default function ResponseComp(props: Props) {
                   )}
                 </span>
               </Row>
-            </>
+            </div>
           )}
         </Col>
       ) : (
