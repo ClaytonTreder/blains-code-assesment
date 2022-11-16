@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Form, Button, Row, Col } from 'react-bootstrap';
 import QueryBuilder from '../../shared/functions/Query';
 import Request from '../../shared/interfaces/Request';
@@ -17,8 +17,18 @@ export default function BoredForm(props: Props) {
   });
 
   const handleChange = (e: any) => {
+    window.localStorage.setItem(
+      'form',
+      JSON.stringify({ ...state, [e.target.name]: e.target.value })
+    );
     setState((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
+
+  useEffect(() => {
+    if (typeof window !== undefined && window.localStorage.getItem('form')) {
+      setState(JSON.parse(window.localStorage.getItem('form') as string));
+    }
+  }, []);
 
   const handleRandom = (e: any) => {
     e.preventDefault();
@@ -39,7 +49,7 @@ export default function BoredForm(props: Props) {
     <>
       <Form onSubmit={handleSubmit}>
         <Form.Label>Category</Form.Label>
-        <Form.Select onChange={handleChange} name='category'>
+        <Form.Select value={state.category} onChange={handleChange} name='category'>
           <option value={0}>--Select--</option>
           <option value='education'>Education</option>
           <option value='recreation'>Recreation</option>
