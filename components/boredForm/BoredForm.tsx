@@ -38,7 +38,6 @@ export default function BoredForm(props: Props) {
   };
 
   const handleSubmit = (e: any) => {
-    console.log(state);
     e.preventDefault();
     fetch('https://www.boredapi.com/api/activity?' + QueryBuilder(state))
       .then((res) => res.json())
